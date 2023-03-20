@@ -1,2 +1,2 @@
 # templates
-Vanus subscription templates
+Vanus connection templates
