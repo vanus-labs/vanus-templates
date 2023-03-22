@@ -1,0 +1,33 @@
+[
+{
+    "id": "20230320_3",
+    "processors": [
+      {
+        "filters": [
+          {
+            "exact": {
+              "type":"com.github.issue_comment.created"
+            }
+          }
+        ],
+        "transformer": {
+          "define": {
+            "login": "$.data.repository.owner.login",
+            "comment": "$.data.comment.body",
+            "repo": "$.data.repository.full_name",
+            "issue": "$.data.issue.html_url",
+            "title": "$.data.issue.title",
+            "number": "$.data.issue.number",
+            "url": "$.data.sender.html_url",
+            "sender": "$.data.sender.login"
+          },
+          "templateJson": {
+            "body": {
+              "username": "Vanus Notification", "content": "Hi <login>, GitHub user **[<sender>](<url>)** just left a comment in the **[<title> #<number>](<issue>)**.\n **Comment: **<comment> "
+            }
+          }
+        }
+      }
+    ]
+  }
+]

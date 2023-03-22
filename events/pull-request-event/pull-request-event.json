@@ -1,0 +1,29 @@
+[
+{
+    "id": "20230321_1",
+    "processors": [
+      {
+        "filters": [
+          { "exact": { "type": "com.github.pull_request.opened" } }
+        ],
+        "transformer": {
+          "define": {
+            "login": "$.data.repository.owner.login",
+            "repo": "$.data.repository.full_name",
+            "issue": "$.data.pull_request.html_url",
+            "title": "$.data.pull_request.title",
+            "number": "$.data.pull_request.number",
+            "url": "$.data.sender.html_url",
+            "sender": "$.data.sender.login"
+          },
+          "templateJson": {
+            "body": {
+              "username": "Vanus Notification", "content": "Hi <login>, GitHub user **[<sender>](<url>)** just opened a pull_request. Check **[<title> #<number>](<issue>)** out now."
+            }
+          }
+        }
+      }
+    ]
+  }
+
+]

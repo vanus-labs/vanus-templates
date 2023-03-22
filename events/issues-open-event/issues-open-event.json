@@ -1,0 +1,34 @@
+ [
+ {
+    "id": "20230320_2",
+    "processors": [
+      {
+        "filters": [
+          {
+            "exact": {
+              "type":"com.github.issues.opened"
+            }
+          }
+        ],
+        "transformer": {
+          "define": {
+            "login": "$.data.repository.owner.login",
+            "repo": "$.data.repository.full_name",
+            "issue": "$.data.issue.html_url",
+            "title": "$.data.issue.title",
+            "body": "$.data.issue.body",
+            "number": "$.data.issue.number",
+            "url": "$.data.sender.html_url",
+            "sender": "$.data.sender.login"
+          },
+          "templateJson": {
+            "body": {
+              "username":"Vanus Notification", "content": "Hi <login>, GitHub user **[<sender>](<url>)** just opened an issue. Check **[<title> #<number>](<issue>)** out now."
+            }
+          }
+        }
+      }
+    ]
+  }
+
+]

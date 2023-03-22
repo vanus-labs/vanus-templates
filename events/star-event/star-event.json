@@ -1,0 +1,31 @@
+[ 
+ {
+    "id": "20230320_1",
+    "processors": [
+      {
+        "filters": [
+          {
+            "exact": {
+              "type": "com.github.star.created"
+            }
+          }
+        ],
+        "transformer": {
+          "define": {
+            "login": "$.data.repository.owner.login",
+            "name": "$.data.repository.name",
+            "star": "$.data.repository.stargazers_count",
+            "repo": "$.data.repository.name",
+            "home": "$.data.sender.html_url",
+            "sender": "$.data.sender.login"
+          },
+          "templateJson": {
+            "body": {
+              "username": "Vanus Notification", "content": "Hi <login>, GitHub user <sender> just stared the <name> repository. Check out his GitHub home page here: <home>. Your repo has <star> stars now."
+            }
+          }
+        }
+      }
+    ]
+  }
+]
