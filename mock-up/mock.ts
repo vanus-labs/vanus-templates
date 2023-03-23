@@ -34,6 +34,24 @@
         "description": "The maintenance team of the GitHub repo can receive real-time notifications on Discord when anyone opens a pull-request.", 
         "subTitle": "GitHub opened pull-request event triggers a Discord message", 
         "id": '20230321_1'
+},
+
+{
+        sinkIcon: "auth0",
+        source: 'webhook', 
+        sink:'http', 
+        "description": "The Auth0 Client can receive real-time notifications of user's activity on Feishu when someone logs in to their account.", 
+        "subTitle": "Auth0 login event triggers a Feishu message", 
+        "id": '20230323_1'
+},
+
+{
+        sinkIcon: "auth0",
+        source: 'webhook', 
+        sink:'http', 
+        "description": "The Auth0 Client can receive real-time notifications of user's activity on Slack when someone logs in to their account.", 
+        "subTitle": "Auth0 login event triggers a Slack message", 
+        "id": '20230323_2'
 }
 
     

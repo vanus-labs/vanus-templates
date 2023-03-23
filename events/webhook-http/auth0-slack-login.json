@@ -1,0 +1,34 @@
+{
+    "id": "20230323_2",
+    "processors": [
+      {
+        "transformer": {
+          "define": {
+                "date": "$.data.body.data.date",
+                "connection": "$.data.body.data.connection",
+                "user_name": "$.data.body.data.user_name",
+                "client_name": "$.data.body.data.client_name",
+                "ip": "$.data.body.data.ip",
+                "number_of_login": "$.data.body.data.details.stats.loginsCount",
+                "hostname": "$.data.body.data.hostname",
+                "strategy_type": "$.data.body.data.strategy_type",
+                "user_agent": "$.data.body.data.user_agent"
+          },
+
+          "templateJson": {
+            "body": {
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Hello <client_name>, User <user_name> just used <connection> to sign in to <client_name>"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
