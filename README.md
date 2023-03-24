@@ -4,13 +4,13 @@ Vanus connection templates are pre-configured templates for [Vanus Cloud](https:
 
 # Template Structure
 
-The template is structure is a simple way to help contributors name their templates in a consistent manner.
+The template is structured in a simple way to help contributors name their templates in a consistent manner.
 
-- When creating a template that **does not** exist from the already made source-sink templates, the contributor must create a folder with the format **name_of_source-name_of_sink**. An example is `github-http` where **github** is the source & **http** is the sink.
+- When creating a template that **does not** exist from the already made source-sink templates, the contributor must create a new folder with the format **name_of_source-name_of_sink**. An example is `github-http` where **github** is the source & **http** is the sink.
 
-- If the source-sink already exists, the contributor should create a new file with **name_of_source-name_of_sink-event_name.json**. An example is `github-discord-star_event.json` where **github** is the source, **discord** is the sink and **star-event** is the event type. It should be in a json format.
+- If the source-sink folder already exists, the contributor should create a new file with **name_of_source-name_of_sink-event_name.json**. An example is `github-discord-star_event.json` where **github** is the source, **discord** is the sink and **star-event** is the event type. It should be in a json format.
 
-- The **mock-up** folder contains the file `mock.ts` which contains the metadata of the template events. The template has the following:
+- The **mock-up** folder contains the `mock.ts` file which is the metadata of the template events. The template has the following:
   - A `sinkIcon` which is the name of the sink connector
   - A `source` which is the name of the source of the folder
   - A `sink` which is the name of the sink connector of the folder
