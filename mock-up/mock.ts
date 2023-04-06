@@ -79,6 +79,15 @@
         "description": "The Auth0 Client can recieve real-time notifications of how many times a user is logged in to their account with the associated IP address",
         "subTitle": "Auth0 loginCount event triggers a Feishu message with login counts and associated IP address.",
         "id": '20230327_2'
+},
+
+{
+            sinkIcon: "slack",
+            source: 'aws-billing',
+            sink: 'http',
+            "description": "Receieve real-time notification on a Slack Channel for you AWS Billing",
+            "subTitle": "AWS Billing event triggers a Slack message",
+            "id": '20230406_1'
 }
 
 ]
