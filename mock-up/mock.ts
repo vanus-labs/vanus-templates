@@ -88,6 +88,14 @@
             "description": "Receieve real-time notification on a Slack Channel for you AWS Billing",
             "subTitle": "AWS Billing event triggers a Slack message",
             "id": '20230406_1'
+},
+{
+            sinkIcon: "discord",
+            source: 'amazon-eventbridge',
+            sink: 'http',
+            "description": "Receive real-time notifications on Discord when someone uses Amazon S3 to create or delete Bucket.",
+            "subTitle": "Amazon EventBridge CreateBucket | DeleteBucket event triggers a Discord message",
+            "id": '20230406_2'
 }
 
 ]
