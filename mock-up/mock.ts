@@ -98,4 +98,12 @@
             "id": '20230406_2'
 }
 
+{           sinkIcon: "discord",
+            source: 'aws-billing',
+            sink: 'http',
+            "description": "Receieve real-time notification on Discord for your AWS Billing",
+            "subTitle": "AWS Billing event triggers a Discord message",
+            "id": '20230406_2'
+}
+
 ]
