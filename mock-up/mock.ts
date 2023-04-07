@@ -70,7 +70,7 @@
         "description": "The Auth0 Client can receive real-time notifications on Slack of how many times a user is logged in to their account with the associated IP address",
         "subTitle": "Auth0 loginCount event triggers a Slack message with login counts and associated IP adddress.",
         "id": '20230327_1'
-}
+},
 
 {
         sinkIcon: "auth0",
@@ -89,12 +89,22 @@
             "subTitle": "AWS Billing event triggers a Slack message",
             "id": '20230406_1'
 },
+
 {
             sinkIcon: "discord",
             source: 'amazon-eventbridge',
             sink: 'http',
             "description": "Receive real-time notifications on Discord when someone uses Amazon S3 to create or delete Bucket.",
             "subTitle": "Amazon EventBridge CreateBucket | DeleteBucket event triggers a Discord message",
+            "id": '20230406_2'
+},
+
+{
+            sinkIcon: "slack",
+            source: 'amazon-eventbridge',
+            sink: 'http',
+            "description": "Receive real-time notifications on a Slack Channel when someone uses Amazon S3 to create or delete Bucket.",
+            "subTitle": "Amazon EventBridge CreateBucket | DeleteBucket event triggers a Slack message",
             "id": '20230406_2'
 }
 
