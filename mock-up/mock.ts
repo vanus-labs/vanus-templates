@@ -96,6 +96,14 @@
             "description": "Receive real-time notifications on Discord when someone uses Amazon S3 to create or delete Bucket.",
             "subTitle": "Amazon EventBridge CreateBucket | DeleteBucket event triggers a Discord message",
             "id": '20230406_2'
+},
+{
+            sinkIcon: "discord",
+            source: 'stripe',
+            sink: 'http',
+            "description": "Receive Real time notification of Stripe Invoice Payment on Discord",
+            "subTitle": "Stripe Invoice Payment event triggers a Discord message",
+            "id": '20230407_1'
 }
 
 ]

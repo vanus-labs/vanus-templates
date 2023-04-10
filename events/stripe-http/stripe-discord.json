@@ -1,0 +1,24 @@
+[
+    {
+    "id": "20230407_1",
+    "processors": [
+      {
+        "transformer": {
+          "define": {
+				"amount_paid": "$.data.body.data.object.amount_paid",
+				"customer_id": "$.data.body.data.object.customer",
+				"subscription": "$.data.body.data.object.subscription",
+                "date": "$.data.body.data.object.date",
+				"currency": "$.data.body.data.object.currency"
+          },
+
+          "templateJson": {
+            "body": {
+              "username": "Stripe Invoice Notification", "content": "Hey!, Your Client <customer_id>, just paid <amount_paid> <currency> for <subscription>."
+            }
+          }
+        }
+      }
+    ]
+  }
+]
