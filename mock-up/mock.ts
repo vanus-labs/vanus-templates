@@ -104,14 +104,14 @@
             "description": "Receive Real time notification of Stripe Invoice Payment on Discord",
             "subTitle": "Stripe Invoice Payment event triggers a Discord message",
             "id": '20230407_1'
-}
+},
 
 {           sinkIcon: "discord",
             source: 'aws-billing',
             sink: 'http',
             "description": "Receieve real-time notification on Discord for your AWS Billing",
             "subTitle": "AWS Billing event triggers a Discord message",
-            "id": '20230406_2'
+            "id": '20230410_1'
 }
 
 ]
