@@ -105,7 +105,7 @@
             sink: 'http',
             "description": "Receive real-time notifications on a Slack Channel when someone uses Amazon S3 to create or delete Bucket.",
             "subTitle": "Amazon EventBridge CreateBucket | DeleteBucket event triggers a Slack message",
-            "id": '20230406_2'
+            "id": '20230407_2'
 }
 
 ]
