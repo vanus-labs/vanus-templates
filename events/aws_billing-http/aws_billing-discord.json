@@ -1,0 +1,34 @@
+[
+    {
+        "id": "20230410_1",
+        "processors": [
+            {
+                "filters": [
+                    {
+                        "exact": {
+                            "source": "cloud.amazon.billing",
+                            "type": "amazon.billing.daily"
+                        }
+                    }
+                ],
+                "transformer": {
+                    "define": {
+                        "date": "$.data.date",
+                        "service": "$.data.service",
+                        "blendedCost": "$.data.blendedCost.amount",
+                        "unblendedCost": "$.data.unblendedCost.amount",
+                        "netUnblendedCost": "$.data.netUnblendedCost.amount",
+                        "amortizedCost": "$.data.amortizedCost.amount",
+                        "netAmortizedCost": "$.data.netAmortizedCost.amount",
+                        "unit": "$.data.blendedCost.unit"
+                    },
+                    "templateJson": {
+                        "body": {
+                            "username": "Vanus Notification", "content": "Hello, your AWS Bill for **<service>** as of **<date>**, is **<amortizedCost>** unit."
+                        }
+                    }
+                }
+            }
+        ]
+    }
+]
