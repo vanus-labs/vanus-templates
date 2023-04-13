@@ -1,0 +1,69 @@
+[
+    {
+        "id": "20230412_1",
+        "processors": [
+            {
+                "filters": [
+                    {
+                        "any": [
+                            {
+                                "exact": {
+                                    "data.body.detail.eventName": "CreateBucket"
+                                }
+                            },
+                            {
+                                "exact": {
+                                    "data.body.detail.eventName": "DeleteBucket"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "transformer": {
+                    "define": {
+                        "time": "$.data.body.time",
+                        "account": "$.data.body.account",
+                        "eventSource": "$.data.body.detail.eventSource",
+                        "eventName": "$.data.body.detail.eventName",
+                        "bucketName": "$.data.body.detail.requestParameters.bucketName"
+                    },
+                    "pipeline": [
+                        {
+                            "command": [
+                                "condition_if",
+                                "$.data.desc",
+                                "<eventName>",
+                                "==",
+                                "CreateBucket",
+                                "created bucket",
+                                "deleted bucket"
+                            ]
+                        }
+                    ],
+                    "templateJson": {
+                        "body": {
+                    "blocks": [
+                        {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": "The account **<account>** just **<$.data.desc>** and the name is <bucketName>\n\n<time>."
+                        },
+                        "accessory": {
+                            "type": "image",
+                            "image_url": "https://user-images.githubusercontent.com/3268013/149550617-d92fa8ff-f95d-499c-8515-0ed0be976fbf.png",
+                            "alt_text": "amazon eventbridge"
+                            }
+                        }
+                    ]
+                }
+   
+            }
+                
+        }
+ 
+    }      
+]
+    
+}
+]

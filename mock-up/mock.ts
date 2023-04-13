@@ -2,7 +2,7 @@
     {
         sinkIcon: "discord",
         source: "github",
-        sink: "http",
+        sink: "discord",
         description:
             "The maintenance team of the GitHub repo can receive real-time notifications on Discord when someone gives a star to their repo.",
         subTitle: "GitHub star event triggers a Discord message",
@@ -12,7 +12,7 @@
     {
         sinkIcon: "discord",
         source: "github",
-        sink: "http",
+        sink: "discord",
         description:
             "The maintenance team of the GitHub repo can receive real-time notifications on Discord when someone creates an issue on their repo.",
         subTitle: "GitHub issue event triggers a Discord message",
@@ -22,7 +22,7 @@
     {
         sinkIcon: "discord",
         source: "github",
-        sink: "http",
+        sink: "discord",
         description:
             "The maintenance team of the GitHub repo can receive real-time notifications on Discord when someone creates an issue comment on their repo.",
         subTitle: "GitHub issue comment event triggers a Discord message",
@@ -32,7 +32,7 @@
     {
         sinkIcon: "discord",
         source: "github",
-        sink: "http",
+        sink: "discord",
         description:
             "The maintenance team of the GitHub repo can receive real-time notifications on Discord when anyone opens a pull-request.",
         subTitle: "GitHub opened pull-request event triggers a Discord message",
@@ -40,9 +40,9 @@
     },
 
     {
-        sinkIcon: "auth0",
-        source: "webhook",
-        sink: "http",
+        sinkIcon: "feishu",
+        source: "auth0",
+        sink: "feishu",
         description:
             "The Auth0 Client can receive real-time notifications of user's activity on Feishu when someone logs in to their account.",
         subTitle: "Auth0 login event triggers a Feishu message",
@@ -50,9 +50,9 @@
     },
 
     {
-        sinkIcon: "auth0",
-        source: "webhook",
-        sink: "http",
+        sinkIcon: "slack",
+        source: "auth0",
+        sink: "slack",
         description:
             "The Auth0 Client can receive real-time notifications of user's activity on Slack when someone logs in to their account.",
         subTitle: "Auth0 login event triggers a Slack message",
@@ -60,9 +60,9 @@
     },
 
     {
-        sinkIcon: "auth0",
-        source: "webhook",
-        sink: "http",
+        sinkIcon: "discord",
+        source: "auth0",
+        sink: "discord",
         description:
             "The Auth0 Client can receive real-time notifications of how many times a user is logged in to their account with the associated IP address",
         subTitle: "Auth0 loginCount event triggers a Discord message with login counts and associated IP adddress.",
@@ -70,9 +70,9 @@
     },
 
     {
-        sinkIcon: "auth0",
-        source: "webhook",
-        sink: "http",
+        sinkIcon: "slack",
+        source: "auth0",
+        sink: "slack",
         description:
             "The Auth0 Client can receive real-time notifications on Slack of how many times a user is logged in to their account with the associated IP address",
         subTitle: "Auth0 loginCount event triggers a Slack message with login counts and associated IP adddress.",
@@ -80,9 +80,9 @@
     },
 
     {
-        sinkIcon: "auth0",
-        source: "webhook",
-        sink: "http",
+        sinkIcon: "feishu",
+        source: "auth0",
+        sink: "feishu",
         description:
             "The Auth0 Client can recieve real-time notifications of how many times a user is logged in to their account with the associated IP address",
         subTitle: "Auth0 loginCount event triggers a Feishu message with login counts and associated IP address.",
@@ -92,7 +92,7 @@
     {
         sinkIcon: "slack",
         source: "aws-billing",
-        sink: "http",
+        sink: "slack",
         description: "Receieve real-time notification on a Slack Channel for you AWS Billing",
         subTitle: "AWS Billing event triggers a Slack message",
         id: "20230406_1",
@@ -101,7 +101,7 @@
     {
         sinkIcon: "discord",
         source: "amazon-eventbridge",
-        sink: "http",
+        sink: "discord",
         description:
             "Receive real-time notifications on Discord when someone uses Amazon S3 to create or delete Bucket.",
         subTitle: "Amazon EventBridge CreateBucket | DeleteBucket event triggers a Discord message",
@@ -111,7 +111,7 @@
     {
         sinkIcon: "discord",
         source: "stripe",
-        sink: "http",
+        sink: "discord",
         description: "Receive Real time notification of Stripe Invoice Payment on Discord",
         subTitle: "Stripe Invoice Payment event triggers a Discord message",
         id: "20230407_1",
@@ -120,17 +120,16 @@
     {
         sinkIcon: "slack",
         source: "amazon-eventbridge",
-        sink: "http",
-        description:
-            "Receive real-time notifications on a Slack Channel when someone uses Amazon S3 to create or delete Bucket.",
+        sink: "slack",
+        description: "Receive real-time notifications on a Slack Channel when someone uses Amazon S3 to create or delete Bucket.",
         subTitle: "Amazon EventBridge CreateBucket | DeleteBucket event triggers a Slack message",
-        id: "20230407_2",
+        id: "20230412_1",
     },
 
     {
         sinkIcon: "discord",
         source: "aws-billing",
-        sink: "http",
+        sink: "discord",
         description: "Receieve real-time notification on Discord for your AWS Billing",
         subTitle: "AWS Billing event triggers a Discord message",
         id: "20230410_1",
