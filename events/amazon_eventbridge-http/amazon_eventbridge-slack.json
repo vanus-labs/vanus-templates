@@ -47,7 +47,7 @@
                                     "type": "section",
                                     "text": {
                                         "type": "mrkdwn",
-                                        "text": "Hello World, This is where I put my text"
+                                        "text": "The account **<account>** just **<$.data.desc>** and the name is <bucketName>\n\n<time>."
                                     },
                                     "accessory": {
                                         "type": "image",
