@@ -1,0 +1,27 @@
+[
+    {
+        "id": "202304014_1",
+        "processors": [
+            {
+                "transformer": {
+                    "define": {
+                        "amount_paid": "$.data.body.data.object.amount_paid",
+                        "customer_id": "$.data.body.data.object.customer",
+                        "date": "$.data.body.data.object.date",
+                        "currency":"$.data.body.data.object.currency",
+                        "subscription": "$.data.body.data.object.subscription"
+                    },
+                    "templateJson": {
+                        "body": {
+                            "msg_type": "text",
+                            "content": {
+                                "text": "Hey!, Your Client <customer_id>, just paid <amount_paid> <currency> for <subscription>."
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+]
+
