@@ -134,4 +134,13 @@
         subTitle: "AWS Billing event triggers a Discord message",
         id: "20230410_1",
     },
+
+    {
+        sinkIcon: "feishu",
+        source: "stripe",
+        sink: "feishu",
+        description: "Receive real-time notification on Feishu of Stripe Invoice payment.",
+        subTitle: "Stripe Invoice payment event triggers a Feishu message",
+        id: "20230414_1",
+    }
 ];
