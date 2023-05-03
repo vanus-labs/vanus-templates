@@ -1,0 +1,33 @@
+[
+    {
+        "id": "20230428_2",
+        "processors": [
+            {
+                "filters": [
+                    {
+                      "exact": {
+                          "type": "charge.succeeded"
+                      }
+                    }
+                ],
+                "transformer": {
+                    "define": {
+                      "customer_id": "$.data.body.data.object.customer",
+                      "order_id": "$data.body.data.object.metadata.order_id",
+                      "amount_paid": "$.data.body.data.object.amount_paid",
+                      "amount_captured": "$data.body.data.object.amount_captured",
+                      "payment_method": "$data.body.data.object.payment_method",
+                      "status": "$.data.body.data.object.status", 
+                      "date": "$.data.body.data.object.date",
+                      "currency": "$.data.body.data.object.currency"
+                    },
+                    "templateJson": {
+                        "body": {
+                            "username": "Stripe charge succeeded Notification", "content": "Payment <status>. Your Client <customer_id>, just paid <amount_captured> <currency> for <order_id> on <date>, with payment method <payment_method>."
+                        }
+                    }
+                }
+            }
+        ]
+    }
+]
