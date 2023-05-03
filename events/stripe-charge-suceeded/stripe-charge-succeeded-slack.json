@@ -1,0 +1,44 @@
+{
+  "id": "20230428_1",
+  "processors": [
+    {
+      "filters": [
+        {
+          "exact": {
+            "type": "charge.succeeded"
+          }
+        }
+      ],
+      "transformer": {
+        "define": {
+          "customer_id": "$.data.body.data.object.customer",
+          "order_id": "$data.body.data.object.metadata.order_id",
+          "amount_paid": "$.data.body.data.object.amount_paid",
+          "amount_captured": "$data.body.data.object.amount_captured",
+          "payment_method": "$data.body.data.object.payment_method",
+          "status": "$.data.body.data.object.status", 
+          "date": "$.data.body.data.object.date",
+          "currency": "$.data.body.data.object.currency"
+        },
+        "templateJson": {
+          "body": {
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Payment <status>. Your Client <customer_id>, just paid <amount_captured> <currency> for <order_id> on <date>, with payment method <payment_method>."
+                },
+                "accessory": {
+                  "type": "image",
+                  "image_url": "https://pbs.twimg.com/profile_images/1618575477781807105/iDuRlqTe_400x400.jpg",
+                  "alt_text": "stripe"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
