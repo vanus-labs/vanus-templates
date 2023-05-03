@@ -142,5 +142,33 @@
         description: "Receive real-time notification on Feishu of Stripe Invoice payment.",
         subTitle: "Stripe Invoice payment event triggers a Feishu message",
         id: "20230414_1",
-    }
+    },
+
+    {
+        sinkIcon: "slack",
+        source: "stripe",
+        sink: "slack",
+        description: "Receive real-time notification on slack when a Stripe charge is successful.",
+        subTitle: "Stripe charge succeeded event triggers a slack message",
+        id: "202304028_1",
+    },
+
+    {
+        sinkIcon: "discord",
+        source: "stripe",
+        sink: "discord",
+        description: "Receive real-time notification on discord when a Stripe charge is successful.",
+        subTitle: "Stripe charge succeeded event triggers a discord message",
+        id: "202304028_2",
+    },
+    
+    {
+        sinkIcon: "feishu",
+        source: "stripe",
+        sink: "feishu",
+        description: "Receive real-time notification on Feishu when a Stripe charge is successful.",
+        subTitle: "Stripe charge succeeded event triggers a Feishu message",
+        id: "202304028_3",
+    },
+
 ];
