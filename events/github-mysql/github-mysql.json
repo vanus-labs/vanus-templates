@@ -1,0 +1,150 @@
+[
+    {
+      "id": "20230424_1",
+      "processors": [
+        {
+          "filters": [
+            {
+              "exact": {
+                "type": "com.github.star.created"
+              }
+            }
+          ],
+          "transformer": {
+            "define": {
+              "login": "$.data.repository.owner.login",
+              "name": "$.data.repository.name",
+              "star": "$.data.repository.stargazers_count",
+              "repo": "$.data.repository.name",
+              "home": "$.data.sender.html_url",
+              "sender": "$.data.sender.login"
+            },
+            "templateJson": {
+              "body": {
+                "name": "<name>",
+                "login": "<login>",
+                "repo": "<repo>",
+                "home": "<home>",
+                "sender": "<sender>",
+                "star": "<star>"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "20230424_2",
+      "processors": [
+        {
+          "filters": [
+            {
+              "exact": {
+                "type": "com.github.issues.opened"
+              }
+            }
+          ],
+          "transformer": {
+            "define": {
+              "login": "$.data.repository.owner.login",
+              "repo": "$.data.repository.name",
+              "issue": "$.data.issue.html_url",
+              "title": "$.data.issue.title",
+              "body": "$.data.issue.body",
+              "number": "$.data.issue.number",
+              "url": "$.data.sender.html_url",
+              "sender": "$.data.sender.login",
+              "state": "$.data.issue.state"
+            },
+            "templateJson": {
+              "body": {
+                "login": "<login>",
+                "repo": "<repo>",
+                "issue": "<issues>",
+                "title": "<title>",
+                "body": "<body>",
+                "number": "<number>",
+                "url": "<url>",
+                "sender": "<sender>",
+                "state": "<state>"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "20230424_3",
+      "processors": [
+        {
+          "filters": [
+            {
+              "exact": {
+                "type": "com.github.issue_comment.created"
+              }
+            }
+          ],
+          "transformer": {
+            "define": {
+              "login": "$.data.repository.owner.login",
+              "comment": "$.data.comment.body",
+              "repo": "$.data.repository.full_name",
+              "issue": "$.data.issue.html_url",
+              "title": "$.data.issue.title",
+              "number": "$.data.issue.number",
+              "url": "$.data.sender.html_url",
+              "sender": "$.data.sender.login"
+            },
+            "templateJson": {
+              "body": {
+                "login": "<login>",
+                "comment": "<comment>",
+                "repo": "<repo>",
+                "issue": "<issue>",
+                "title": "<title>",
+                "number": "<number>",
+                "url": "<url>",
+                "sender": "<sender>"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "20230424_4",
+      "processors": [
+        {
+          "filters": [
+            {
+              "exact": {
+                "type": "com.github.pull_request.opened"
+              }
+            }
+          ],
+          "transformer": {
+            "define": {
+              "login": "$.data.repository.owner.login",
+              "repo": "$.data.repository.full_name",
+              "issue": "$.data.pull_request.html_url",
+              "title": "$.data.pull_request.title",
+              "number": "$.data.pull_request.number",
+              "url": "$.data.sender.html_url",
+              "sender": "$.data.sender.login"
+            },
+            "templateJson": {
+              "body": {
+                "login": "<login>",
+                "repo": "<repo>",
+                "issue": "<issue>",
+                "title": "<title>",
+                "number": "<number>",
+                "url": "<url>",
+                "sender": "<sender>"
+              }
+            }
+          }
+        }
+      ]
+    }
+]
