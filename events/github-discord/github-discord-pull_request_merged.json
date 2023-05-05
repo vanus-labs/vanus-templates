@@ -1,0 +1,53 @@
+{
+    "id": "20230412_3",
+    "processors": [
+      {
+        "filters": [
+          {
+            "exact": {
+              "type": "com.github.pull_request.closed"
+            }
+          },
+          {
+            "prefix": {
+              "data.pull_request.merged": "true"
+            }
+          }
+        ],
+        "transformer": {
+          "pipeline": [
+            {
+              "command": [
+                "join",
+                "$.data.user_url",
+                "",
+                "<",
+                "$.data.sender.html_url",
+                "|",
+                "$.data.sender.login",
+                ">"
+              ]
+            },
+            {
+              "command": [
+                "join",
+                "$.data.pull_request_link",
+                "",
+                "<",
+                "$.data.pull_request.html_url",
+                "|",
+                "$.data.pull_request.title",
+                " #"
+              ]
+            }
+          ],
+          "templateJson": {
+            "body": {
+                "username": "Vanus Notification",
+                "content": "Hi everyone, GitHub user **[<$.data.sender.login>'s](<$.data.sender.html_url>)** pull request has been merged. Check *[<$.data.pull_request.title> #<$.data.pull_request.number>](<$.data.pull_request.html_url>)* out now."
+            }
+          }
+        }
+      }
+    ]
+  }
