@@ -1,0 +1,29 @@
+[
+    {
+      "id": "20230412_1",
+      "processors": [
+        {
+          "filters": [
+            {
+              "exact": {
+                "type": "com.amazonaws.s3.ObjectRemoved:Delete"
+              }
+            }
+          ],
+          "transformer": {
+            "define": {
+              "bucket_name": "$.data.s3.bucket.name",
+              "file_name": "$.data.object.key",
+              "file_size": "$.data.object.size"
+            },
+            "templateJson": {
+              "body": {
+                "username": "S3 Notification",
+                "content": "Hello, a file with name <file_name> of size <file_size> has been removed from <bucket_name> bucket."
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]

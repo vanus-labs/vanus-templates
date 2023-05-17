@@ -130,45 +130,44 @@
         sinkIcon: "discord",
         source: "aws-billing",
         sink: "discord",
-        description: "Receieve real-time notification on Discord for your AWS Billing",
+        description: "Receive real-time notification on Discord for your AWS Billing",
         subTitle: "AWS Billing event triggers a Discord message",
         id: "20230410_1",
     },
 
     {
-        sinkIcon: "feishu",
-        source: "stripe",
-        sink: "feishu",
-        description: "Receive real-time notification on Feishu of Stripe Invoice payment.",
-        subTitle: "Stripe Invoice payment event triggers a Feishu message",
-        id: "20230414_1",
+        sinkIcon: "mysql",
+        source: 'github',
+        sink: 'mysql',
+        "description": "The maintenance team of the GitHub repo can receive real-time notifications on MySQL when someone stars their repo.",
+        "subTitle": "Github Star Event Triggers a new row on MySQL",
+        "id": '20230504_1'
     },
 
     {
-        sinkIcon: "slack",
-        source: "stripe",
-        sink: "slack",
-        description: "Receive real-time notification on slack when a Stripe charge is successful.",
-        subTitle: "Stripe charge succeeded event triggers a slack message",
-        id: "202304028_1",
+        sinkIcon: "mysql",
+        source: 'github',
+        sink: 'mysql',
+        "description": "The maintenance team of the GitHub repo can receive real-time notifications on MySQL when someone creates a new issue on their repo.",
+        "subTitle": "Github Issue create event triggers a new row on MySQL",
+        "id": '20230504_2'
     },
 
     {
-        sinkIcon: "discord",
-        source: "stripe",
-        sink: "discord",
-        description: "Receive real-time notification on discord when a Stripe charge is successful.",
-        subTitle: "Stripe charge succeeded event triggers a discord message",
-        id: "202304028_2",
-    },
-    
-    {
-        sinkIcon: "feishu",
-        source: "stripe",
-        sink: "feishu",
-        description: "Receive real-time notification on Feishu when a Stripe charge is successful.",
-        subTitle: "Stripe charge succeeded event triggers a Feishu message",
-        id: "202304028_3",
+        sinkIcon: "mysql",
+        source: 'github',
+        sink: 'mysql',
+        "description": "The maintenance team of the GitHub repo can receive real-time notifications on MySQl when someone creates a new issue comment on their repo.",
+        "subTitle": "Github Issue create comment event triggers a new row on MySQL",
+        "id": '20230504_3'
     },
 
+    {
+        sinkIcon: "mysql",
+        source: 'github',
+        sink: 'mysql',
+        "description": "The maintenance team of the GitHub repo can receive real-time notifications on MySQL when someone creates a new pull-request on their repo.",
+        "subTitle": "Github pull-request event triggers a new row on MySQL",
+        "id": '20230504_4'
+    }
 ];
