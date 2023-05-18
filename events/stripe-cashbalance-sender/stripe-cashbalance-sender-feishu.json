@@ -1,0 +1,32 @@
+[
+    {
+        "id": "20230517_2",
+        "processors": [
+            { 
+                "filters": [
+                  {
+                    "exact": {
+                      "data.body.type": "customer_cash_balance_transaction.created"
+                    }
+                  }
+                ],
+                "transformer": {
+                    "define": {
+                      "customer_id": "$.data.body.data.object.customer",
+                      "created": "$data.body.data.object.created",
+                      "currency": "$.data.body.data.object.currency",
+                      "ending_balance": "$.data.body.data.object.ending_balance"
+                    },
+                    "templateJson": {
+                        "body": {
+                            "msg_type": "text",
+                            "content": {
+                                "text": "Hi <customer_id>, A recent cash amount of <net_amount> was sent by <sender_name> from <sender_bank> bank. Your new balance as at <created> is <ending_balance> <currency>."
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+]
