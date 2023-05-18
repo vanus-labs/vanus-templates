@@ -169,5 +169,32 @@
         "description": "The maintenance team of the GitHub repo can receive real-time notifications on MySQL when someone creates a new pull-request on their repo.",
         "subTitle": "Github pull-request event triggers a new row on MySQL",
         "id": '20230504_4'
+    },
+
+    {
+        sinkIcon: "discord",
+        source: "stripe",
+        sink: "discord",
+        description: "Receive real-time notification on discord stating the cash sender, amount, bank name and the ending cash balance of the customer.",
+        subTitle: "Stripe cash balance event triggers a discord message",
+        id: "20230518_1",
+    },
+
+    {
+        sinkIcon: "feishu",
+        source: "stripe",
+        sink: "feishu",
+        description: "Receive real-time notification on discord stating the cash sender, amount, bank name and the ending cash balance of the customer.",
+        subTitle: "Stripe cash balance event triggers a feishu message",
+        id: "20230517_2",
+    },
+
+    {
+        sinkIcon: "slack",
+        source: "stripe",
+        sink: "slack",
+        description: "Receive real-time notification on discord stating the cash sender, amount, bank name and the ending cash balance of the customer.",
+        subTitle: "Stripe cash balance event triggers a slack message",
+        id: "20230517_3",
     }
 ];
