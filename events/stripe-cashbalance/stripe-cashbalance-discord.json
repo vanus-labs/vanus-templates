@@ -1,0 +1,29 @@
+[
+    {
+        "id": "20230517_1",
+        "processors": [
+            {
+                "filters": [
+                    {
+                      "exact": {
+                          "data.body.type": "customer_cash_balance_transaction.created"
+                      }
+                    }
+                ],
+                "transformer": {
+                    "define": {
+                      "customer_id": "$.data.body.data.object.customer",
+                      "created": "$data.body.data.object.created",
+                      "currency": "$.data.body.data.object.currency",
+                      "ending_balance": "$.data.body.data.object.ending_balance"
+                    },
+                    "templateJson": {
+                        "body": {
+                            "username": "Stripe Customer Cash Balance Transaction Notification", "content": "Hi <customer_id>, Your balance as at <created> is <ending_balance> <currency>."
+                        }
+                    }
+                }
+            }
+        ]
+    }
+]
