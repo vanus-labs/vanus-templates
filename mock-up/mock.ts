@@ -177,7 +177,7 @@
         sink: "discord",
         "description": "Receive real-time notification on discord stating the cash sender, amount, bank name and the ending cash balance of the customer.",
         "subTitle": "Stripe cash balance event triggers a discord message",
-        "id": "20230518_1",
+        "id": "20230518_1"
     },
 
     {
@@ -186,7 +186,7 @@
         sink: "feishu",
         "description": "Receive real-time notification on discord stating the cash sender, amount, bank name and the ending cash balance of the customer.",
         "subTitle": "Stripe cash balance event triggers a feishu message",
-        "id": "20230518_2",
+        "id": "20230518_2"
     },
 
     {
@@ -195,6 +195,6 @@
         sink: "slack",
         "description": "Receive real-time notification on discord stating the cash sender, amount, bank name and the ending cash balance of the customer.",
         "subTitle": "Stripe cash balance event triggers a slack message",
-        "id": "20230518_3",
+        "id": "20230518_3"
     }
 ];
