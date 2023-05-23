@@ -171,4 +171,31 @@
         id: "202304028_3",
     },
 
+    {
+        sinkIcon: "slack",
+        source: "stripe",
+        sink: "slack",
+        description: "Receive real-time notification on slack when a Stripe product is created.",
+        subTitle: "Stripe product created event triggers a slack message",
+        id: "20230523_3",
+    },
+
+    {
+        sinkIcon: "discord",
+        source: "stripe",
+        sink: "discord",
+        description: "Receive real-time notification on discord when a Stripe product is created.",
+        subTitle: "Stripe product created event triggers a discord message",
+        id: "20230523_2",
+    },
+    
+    {
+        sinkIcon: "feishu",
+        source: "stripe",
+        sink: "feishu",
+        description: "Receive real-time notification on Feishu when a Stripe product is created.",
+        subTitle: "Stripe product event triggers a Feishu message",
+        id: "20230523_1",
+    },
+
 ];

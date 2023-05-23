@@ -1,0 +1,29 @@
+[
+    {
+        "id": "20230523_2",
+        "processors": [
+            {
+                "filters": [
+                    {
+                      "exact": {
+                          "data.body.type": "product.created"
+                      }
+                    }
+                ],
+                "transformer": {
+                    "define": {
+                      "time": "$.time",
+                      "product_name": "$.data.body.data.object.name",
+                      "product_id": "$.data.body.data.object.id",
+                      "Price": "$.data.body.data.object.default_price"
+                    },
+                    "templateJson": {
+                        "body": {
+                            "username": "Stripe Product Created Notification", "content": "Hi, a <product> with id number <product_id>, valued at <default_price>, was created on <time>." 
+                        }
+                    }
+                }
+            }
+        ]
+    }
+]
