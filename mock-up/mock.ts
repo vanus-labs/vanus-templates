@@ -175,24 +175,30 @@
         sinkIcon: "discord",
         source: "stripe",
         sink: "discord",
-        description: "Receive real-time notification on discord stating the cash balance of the customer.",
-        subTitle: "Stripe cash balance event triggers a discord message",
-        id: "20230517_1",
+        "description": "Receive real-time notification on discord stating the cash sender, amount, bank name and the ending cash balance of the customer.",
+        "subTitle": "Stripe cash balance event triggers a discord message",
+        "id": "20230518_1"
     },
 
     {
         sinkIcon: "feishu",
         source: "stripe",
         sink: "feishu",
-        description: "Receive real-time notification on feishu stating the cash balance of the customer.",
-        subTitle: "Stripe cash balance event triggers a feishu message",
-        id: "20230517_2",
+        "description": "Receive real-time notification on discord stating the cash sender, amount, bank name and the ending cash balance of the customer.",
+        "subTitle": "Stripe cash balance event triggers a feishu message",
+        "id": "20230518_2"
     },
 
     {
         sinkIcon: "slack",
         source: "stripe",
         sink: "slack",
+        "description": "Receive real-time notification on discord stating the cash sender, amount, bank name and the ending cash balance of the customer.",
+        "subTitle": "Stripe cash balance event triggers a slack message",
+        "id": "20230518_3"
+    }
+];
+
         description: "Receive real-time notification on slack stating the cash balance of the customer.",
         subTitle: "Stripe cash balance event triggers a slack message",
         id: "20230517_3",
