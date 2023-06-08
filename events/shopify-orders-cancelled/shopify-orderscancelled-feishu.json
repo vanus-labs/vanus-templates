@@ -1,0 +1,32 @@
+{
+    "id": "20230608_3",
+    "processors": [
+      {
+        "filters": [
+          {
+            "exact": {
+              "type": "orders/cancelled"
+            }
+          }
+        ],
+        "transformer": {
+          "define": {
+            "currency": "$.data.body.currency",
+            "first_name": "$.data.body.customer.first_name",
+            "last_name": "$.data.body.customer.last_name",
+            "item_name": "$.data.body.line_items[0].title",
+            "item_price": "$.data.body.current_total_price",
+            "order_status_url": "$.data.body.order_status_url"
+          },
+          "templateJson": {
+            "body": {
+                "msg_type": "text",
+                "content": {
+                    "text": "Hi **<first_name>** **<last_name>**, The **<currency><item_price>** **<item_name>** has been cancelled. You can view it current status using this **[link](<order_status_url>)**."
+                }
+            }
+        }
+        }
+      }
+    ]
+  }
