@@ -196,12 +196,6 @@
         "description": "Receive real-time notification on discord stating the cash sender, amount, bank name and the ending cash balance of the customer.",
         "subTitle": "Stripe cash balance event triggers a slack message",
         "id": "20230518_3"
-    }
-];
-
-        description: "Receive real-time notification on slack stating the cash balance of the customer.",
-        subTitle: "Stripe cash balance event triggers a slack message",
-        id: "20230517_3",
     },
 
     {
@@ -227,8 +221,35 @@
         source: "stripe",
         sink: "feishu",
         description: "Receive real-time notification on Feishu when a Stripe product is created.",
-        subTitle: "Stripe product event triggers a Feishu message",
+        subTitle: "Stripe product created event triggers a Feishu message",
         id: "20230523_1",
+    },
+
+    {
+        sinkIcon: "mysql",
+        source: 'shopify',
+        sink: 'mysql',
+        "description": "Receive real-time notification on MySQL when a shopify order is updated.",
+        "subTitle": "Shopify orders updated event triggers a new row on MySQL",
+        "id": '20230608_1'
+    }, 
+    
+    {
+        sinkIcon: "snowflake",
+        source: 'shopify',
+        sink: 'snowflake',
+        "description": "Receive real-time notification on snowflake when a shopify order is updated.",
+        "subTitle": "Shopify orders updated event triggers a new row on snowflake",
+        "id": '20230608_2'
+    },
+    
+    {
+        sinkIcon: "feishu",
+        source: "shopify",
+        sink: "feishu",
+        description: "Receive real-time notification on Feishu when a Shopify order is updated.",
+        subTitle: "Shopify orders updated event triggers a Feishu message",
+        id: "20230608_3",
     },
     
 ];

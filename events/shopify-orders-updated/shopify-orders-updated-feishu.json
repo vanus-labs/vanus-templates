@@ -1,0 +1,36 @@
+[
+    {
+        "id": "20230608_3",
+        "processors": [
+            { 
+                "filters": [
+                  {
+                    "exact": {
+                      "type": "orders/updated"
+                    }
+                  }
+                ],
+                "transformer": {
+                    "define": {
+                    "currency": "$.data.body.currency",
+                    "first_name": "$.data.body.first_name",
+                    "last_name": "$.data.body.last_name",
+                    "order_name": "$.data.body.last_order_name",
+                    "total_price": "$.data.body.total_spent",
+                    "time": "$.data.body.updated_at",
+                    "orders_count": "$.data.body.orders_count",
+                    "order_status": "$.data.body.state"
+                    },
+                    "templateJson": {
+                        "body": {
+                            "msg_type": "text",
+                            "content": {
+                                "text": "Order <order_status>. Hi <first_name> <last_name>. Your latest order <order_name> has been updated as of <time>. Order amount is <total_price> <currency>, with a total number of <orders_count> orders in your account"
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+]

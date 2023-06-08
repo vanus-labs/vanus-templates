@@ -1,0 +1,38 @@
+{
+    "id": "20230608_1",
+    "processors": [
+      {
+        "filters": [
+          {
+            "exact": {
+              "type": "orders/updated"
+            }
+          }
+        ],
+        "transformer": {
+          "define": {
+            "currency": "$.data.body.currency",
+            "first_name": "$.data.body.first_name",
+            "last_name": "$.data.body.last_name",
+            "order_name": "$.data.body.last_order_name",
+            "total_price": "$.data.body.total_spent",
+            "time": "$.data.body.updated_at",
+            "orders_count": "$.data.body.orders_count",
+            "order_status": "$.data.body.state"
+          },
+          "templateJson": {
+            "body": {
+              "first_name": "<first_name>",
+              "last_name": "<last_name>",
+              "order_name": "<item_name>",
+              "orders_count": "<orders_count>",
+              "total_price": "<total_price>",
+              "currency": "<currency>",
+              "order_status": "<order_status>",
+              "time": "<time>"
+            }
+          }
+        }
+      }
+    ]
+}
