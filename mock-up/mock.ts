@@ -196,12 +196,6 @@
         "description": "Receive real-time notification on discord stating the cash sender, amount, bank name and the ending cash balance of the customer.",
         "subTitle": "Stripe cash balance event triggers a slack message",
         "id": "20230518_3"
-    }
-];
-
-        description: "Receive real-time notification on slack stating the cash balance of the customer.",
-        subTitle: "Stripe cash balance event triggers a slack message",
-        id: "20230517_3",
     },
 
     {
@@ -231,4 +225,21 @@
         id: "20230523_1",
     },
     
+    {
+        sinkIcon: "slack",
+        source: "shopify",
+        sink: "slack",
+        description: "Receive real-time notification on slack when an order is cancelled.",
+        subTitle: "Shopify order cancelled event triggers a slack message",
+        id: "20230608_4",
+    },
+
+    {
+    sinkIcon: "feishu",
+        source: "shopify",
+        sink: "feishu",
+        description: "Receive real-time notification on slack when an order is cancelled.",
+        subTitle: "Shopify order cancelled event triggers a slack message",
+        id: "20230608_3",
+    }
 ];
