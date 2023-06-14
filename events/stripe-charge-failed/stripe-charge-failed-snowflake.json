@@ -1,0 +1,38 @@
+{
+    "id": "20230614_6",
+    "processors": [
+      {
+        "filters": [
+          {
+            "exact": {
+              "data.body.type": "charge.failed"
+            }
+          }
+        ],
+        "transformer": {
+          "define": {
+            "customer_id": "$.data.body.data.object.customer",
+            "order_id": "$data.body.data.object.metadata.order_id",
+            "amount_paid": "$.data.body.data.object.amount_paid",
+            "amount_captured": "$data.body.data.object.amount_captured",
+            "payment_method": "$data.body.data.object.payment_method",
+            "status": "$.data.body.data.object.status",
+            "date": "$.data.body.data.object.date",
+            "currency": "$.data.body.data.object.currency"
+          },
+          "templateJson": {
+            "body": {
+              "customer_id": "<customer_id>",
+              "order_id": "<order_id>",
+              "amount_paid": "<amount_paid>",
+              "amount_captured": "<amount_captured>",
+              "payment_method": "<payment_method>",
+              "status": "<status>",
+              "date": "<date>",
+              "currency": "<currency>"
+            }
+          }
+        }
+      }
+    ]
+}
